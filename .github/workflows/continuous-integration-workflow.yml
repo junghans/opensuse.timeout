@@ -9,11 +9,10 @@ on:
 
 jobs:
   CI:
-    continue-on-error: ${{ matrix.config.continue-on-error == 'true' }}
     strategy:
       matrix:
         config:
-          - {dockerfile: 'opensuse', tag: 'latest', continue-on-error: 'true'}
+          - {dockerfile: 'opensuse', tag: 'latest'}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout out code
